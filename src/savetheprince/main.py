@@ -1,14 +1,15 @@
-import time
+import os
 
 import pygame
 
 
 def run() -> None:
     pygame.init()
-    screen = pygame.display.set_mode((1280, 800), pygame.DOUBLEBUF)
-    background = pygame.Surface(screen.get_size())
+    display = pygame.display.set_mode((1280, 800), pygame.DOUBLEBUF)
+    background = pygame.image.load(os.path.join('data', 'map.png'))
     background.convert()
-    screen.blit(background, (0, 0))
+    display.blit(background, (0, 0))
+    pygame.display.set_caption('Save The Prince')
     should_continue = True
     while should_continue:
         for event in pygame.event.get():
@@ -17,7 +18,7 @@ def run() -> None:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     should_continue = False
-        pygame.display.flip()
+            pygame.display.flip()
     pygame.quit()
 
 
