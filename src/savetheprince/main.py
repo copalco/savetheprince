@@ -9,7 +9,19 @@ def run() -> None:
     background = pygame.image.load(os.path.join('data', 'map.png'))
     background = pygame.transform.scale(background, (1280, 800))
     background.convert()
+    hero = pygame.image.load(os.path.join('data', 'dwarf.png'))
+    hero.convert()
+    hero_size = hero.get_size()
     display.blit(background, (0, 0))
+    field1_center_height = 137 / 2.0
+    field1_center_width = 161 / 2.0
+    hero_center_width = hero_size[0] / 2.0
+    hero_center_height = hero_size[1] / 2.0
+    hero_position = (
+            round(field1_center_width - hero_center_width),
+            round(field1_center_height - hero_center_height),
+    )
+    display.blit(hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
     while should_continue:
