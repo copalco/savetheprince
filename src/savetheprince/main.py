@@ -7,6 +7,7 @@ def run() -> None:
     pygame.init()
     display = pygame.display.set_mode((1280, 800), pygame.DOUBLEBUF)
     background = pygame.image.load(os.path.join('data', 'map.png'))
+    background = pygame.transform.scale(background, (1280, 800))
     background.convert()
     display.blit(background, (0, 0))
     pygame.display.set_caption('Save The Prince')
