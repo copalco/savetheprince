@@ -57,8 +57,9 @@ def run() -> None:
         Area(Size(67, 137), Position(167, 0)),
         Area(Size(78, 137), Position(239, 0)),
     ]
+    current_area = 0
     display.blit(background, (0, 0))
-    hero_position = areas[0].get_centered(Size(*hero.get_size()))
+    hero_position = areas[current_area].get_centered(Size(*hero.get_size()))
     display.blit(hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
@@ -71,13 +72,15 @@ def run() -> None:
                     should_continue = False
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
-                    hero_position = areas[1].get_centered(
+                    current_area += 1
+                    hero_position = areas[current_area].get_centered(
                         Size(*hero.get_size())
                     )
                     display.blit(hero, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
-                    hero_position = areas[0].get_centered(
+                    current_area -= 1
+                    hero_position = areas[current_area].get_centered(
                         Size(*hero.get_size())
                     )
                     display.blit(hero, hero_position)
