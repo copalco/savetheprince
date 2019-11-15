@@ -52,9 +52,13 @@ def run() -> None:
     background.convert()
     hero = pygame.image.load(os.path.join('data', 'dwarf.png'))
     hero.convert()
-    hero_size = hero.get_size()
+    areas = [
+        Area(Size(161, 137), Position(0, 0)),
+        Area(Size(67, 137), Position(167, 0)),
+        Area(Size(78, 137), Position(239, 0)),
+    ]
     display.blit(background, (0, 0))
-    hero_position = get_center((167, 137), hero.get_size())
+    hero_position = areas[0].get_centered(Size(*hero.get_size()))
     display.blit(hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
@@ -67,13 +71,15 @@ def run() -> None:
                     should_continue = False
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
-                    hero_position = get_center((67, 137), hero.get_size())
-                    hero_position = (hero_position[0] + 167, hero_position[1])
+                    hero_position = areas[1].get_centered(
+                        Size(*hero.get_size())
+                    )
                     display.blit(hero, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
-                    hero_position = get_center((167, 137), hero.get_size())
-                    hero_position = (hero_position[0], hero_position[1])
+                    hero_position = areas[0].get_centered(
+                        Size(*hero.get_size())
+                    )
                     display.blit(hero, hero_position)
             pygame.display.flip()
     pygame.quit()
