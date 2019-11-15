@@ -55,7 +55,16 @@ def run() -> None:
     areas = [
         Area(Size(161, 137), Position(0, 0)),
         Area(Size(67, 137), Position(167, 0)),
-        Area(Size(78, 137), Position(239, 0)),
+        Area(Size(78, 137), Position(240, 0)),
+        Area(Size(120, 137), Position(324, 0)),
+        Area(Size(110, 137), Position(450, 0)),
+        Area(Size(136, 137), Position(566, 0)),
+        Area(Size(150, 137), Position(708, 0)),
+        Area(Size(90, 137), Position(864, 0)),
+        Area(Size(82, 137), Position(960, 0)),
+        Area(Size(90, 137), Position(1046, 0)),
+        Area(Size(136, 150), Position(1142, 0)),
+        Area(Size(116, 116), Position(1160, 166)),
     ]
     current_area = 0
     display.blit(background, (0, 0))
