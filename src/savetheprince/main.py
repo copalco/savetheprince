@@ -36,6 +36,16 @@ def run() -> None:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     should_continue = False
+                if event.key == pygame.K_RIGHT:
+                    display.blit(background, (0, 0))
+                    hero_position = get_center((67, 137), hero.get_size())
+                    hero_position = (hero_position[0] + 167, hero_position[1])
+                    display.blit(hero, hero_position)
+                if event.key == pygame.K_LEFT:
+                    display.blit(background, (0, 0))
+                    hero_position = get_center((167, 137), hero.get_size())
+                    hero_position = (hero_position[0], hero_position[1])
+                    display.blit(hero, hero_position)
             pygame.display.flip()
     pygame.quit()
 
