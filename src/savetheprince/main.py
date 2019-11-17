@@ -52,6 +52,18 @@ class Circle(object):
                 return self._areas[index - 1]
 
 
+class Game:
+
+    def __init___(self) -> None:
+        self._current_hero_location: Area = None
+
+    def store_hero_location(self, area: Area) -> None:
+        self._current_hero_location = area
+
+    def locate_hero(self) -> Area:
+        return self._current_hero_location
+
+
 def run() -> None:
     pygame.init()
     display = pygame.display.set_mode((1280, 800), pygame.DOUBLEBUF)

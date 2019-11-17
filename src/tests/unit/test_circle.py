@@ -1,9 +1,9 @@
 import unittest
 
-from src.savetheprince.main import Circle
-from src.savetheprince.main import Area
-from src.savetheprince.main import Position
-from src.savetheprince.main import Size
+from savetheprince.main import Circle
+from savetheprince.main import Area
+from savetheprince.main import Position
+from savetheprince.main import Size
 
 
 class TestCircle(unittest.TestCase):
