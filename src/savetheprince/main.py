@@ -33,6 +33,17 @@ class Area:
         )
 
 
+class Circle(object):
+
+    def __init__(self, *areas: Area) -> None:
+        self._areas = areas
+
+    def next(self, current_area: Area) -> Area:
+        for index, area in enumerate(self._areas):
+            if area == current_area:
+                return self._areas[index + 1]
+
+
 def run() -> None:
     pygame.init()
     display = pygame.display.set_mode((1280, 800), pygame.DOUBLEBUF)
