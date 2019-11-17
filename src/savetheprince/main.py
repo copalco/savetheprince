@@ -54,8 +54,8 @@ class Circle(object):
 
 class Game:
 
-    def __init___(self) -> None:
-        self._current_hero_location: Area = None
+    def __init__(self, current_area: Area) -> None:
+        self._current_hero_location: Area = current_area
 
     def store_hero_location(self, area: Area) -> None:
         self._current_hero_location = area
