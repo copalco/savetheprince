@@ -117,7 +117,7 @@ def run() -> None:
     game = Game(areas[0])
     current_area = areas[0]
     display.blit(background, (0, 0))
-    hero_position = current_area.centered(Size(*hero.get_size()))
+    hero_position = game.locate_hero().centered(Size(*hero.get_size()))
     display.blit(hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
@@ -133,7 +133,7 @@ def run() -> None:
                     hero_location = game.locate_hero()
                     game.store_hero_location(circle.next(hero_location))
                     current_area = circle.next(current_area)
-                    hero_position = current_area.centered(
+                    hero_position = game.locate_hero().centered(
                         Size(*hero.get_size())
                     )
                     display.blit(hero, hero_position)
@@ -142,7 +142,7 @@ def run() -> None:
                     hero_location = game.locate_hero()
                     game.store_hero_location(circle.previous(hero_location))
                     current_area = circle.previous(current_area)
-                    hero_position = current_area.centered(
+                    hero_position = game.locate_hero().centered(
                         Size(*hero.get_size())
                     )
                     display.blit(hero, hero_position)
