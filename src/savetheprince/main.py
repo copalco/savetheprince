@@ -46,6 +46,11 @@ class Circle(object):
                 except IndexError:
                     return self._areas[0]
 
+    def previous(self, current_area: Area) -> Area:
+        for index, area in enumerate(self._areas):
+            if area == current_area:
+                return self._areas[index - 1]
+
 
 def run() -> None:
     pygame.init()
