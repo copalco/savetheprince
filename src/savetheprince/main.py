@@ -94,6 +94,8 @@ def run() -> None:
         Area(Size(132, 108), Position(0, 225)),
         Area(Size(132, 78), Position(0, 142)),
     ]
+    circle = Circle(*areas)
+    current_area = areas[0]
     current_area_index = 0
     display.blit(background, (0, 0))
     hero_position = areas[current_area_index].centered(Size(*hero.get_size()))
@@ -110,6 +112,7 @@ def run() -> None:
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
                     current_area_index += 1
+                    current_area = circle.next(current_area)
                     hero_position = areas[current_area_index].centered(
                         Size(*hero.get_size())
                     )
@@ -117,6 +120,7 @@ def run() -> None:
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
                     current_area_index -= 1
+                    current_area = circle.previous(current_area)
                     hero_position = areas[current_area_index].centered(
                         Size(*hero.get_size())
                     )
