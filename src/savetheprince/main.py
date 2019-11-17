@@ -5,17 +5,6 @@ import typing
 import pygame
 
 
-def get_center(first_area: typing.Tuple[int, int], second_area: typing.Tuple[int, int]) -> typing.Tuple[int, int]:
-    first_area_width_center = first_area[0] / 2.0
-    first_area_height_center = first_area[1] / 2.0
-    second_area_width_center = second_area[0] / 2.0
-    second_area_height_center = second_area[1] / 2.0
-    return (
-        round(first_area_width_center - second_area_width_center),
-        round(first_area_height_center - second_area_height_center),
-    )
-
-
 @dataclass(frozen=True)
 class Size:
     width: int
