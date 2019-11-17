@@ -22,7 +22,7 @@ class Area:
         self._size = size
         self._position = position
 
-    def get_centered(self, size: Size) -> Position:
+    def centered(self, size: Size) -> Position:
         half_width = self._size.width / 2.0
         half_height = self._size.height / 2.0
         half_other_width = size.width / 2.0
@@ -77,7 +77,7 @@ def run() -> None:
     ]
     current_area = 0
     display.blit(background, (0, 0))
-    hero_position = areas[current_area].get_centered(Size(*hero.get_size()))
+    hero_position = areas[current_area].centered(Size(*hero.get_size()))
     display.blit(hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
@@ -91,14 +91,14 @@ def run() -> None:
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
                     current_area += 1
-                    hero_position = areas[current_area].get_centered(
+                    hero_position = areas[current_area].centered(
                         Size(*hero.get_size())
                     )
                     display.blit(hero, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
                     current_area -= 1
-                    hero_position = areas[current_area].get_centered(
+                    hero_position = areas[current_area].centered(
                         Size(*hero.get_size())
                     )
                     display.blit(hero, hero_position)
