@@ -7,4 +7,8 @@ setup(
     packages=find_packages(include=('savetheprince*',)),
     include_package_data=True,
     zip_safe=False,
+    install_requires=[
+        'dataclasses==0.7',
+        'pygame==1.9.6',
+    ]
 )
