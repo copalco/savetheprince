@@ -115,7 +115,6 @@ def run() -> None:
     ]
     circle = Circle(*areas)
     game = Game(areas[0])
-    current_area = areas[0]
     display.blit(background, (0, 0))
     hero_position = game.locate_hero().centered(Size(*hero.get_size()))
     display.blit(hero, hero_position)
@@ -132,7 +131,6 @@ def run() -> None:
                     display.blit(background, (0, 0))
                     hero_location = game.locate_hero()
                     game.store_hero_location(circle.next(hero_location))
-                    current_area = circle.next(current_area)
                     hero_position = game.locate_hero().centered(
                         Size(*hero.get_size())
                     )
@@ -141,7 +139,6 @@ def run() -> None:
                     display.blit(background, (0, 0))
                     hero_location = game.locate_hero()
                     game.store_hero_location(circle.previous(hero_location))
-                    current_area = circle.previous(current_area)
                     hero_position = game.locate_hero().centered(
                         Size(*hero.get_size())
                     )
