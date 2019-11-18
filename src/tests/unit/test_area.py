@@ -2,7 +2,7 @@ import unittest
 
 from savetheprince.main import Area
 from savetheprince.main import AreaId
-from savetheprince.main import Position
+from savetheprince.position import Position
 from savetheprince.size import Size
 
 

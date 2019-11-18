@@ -2,13 +2,8 @@ import os
 import typing
 
 import pygame
+from savetheprince.position import Position
 from savetheprince.size import Size
-
-
-class Position(typing.NamedTuple):
-    x: int
-    y: int
-
 
 AreaId = typing.NewType('AreaId', str)
 

@@ -1,6 +1,6 @@
 import random
 
-from savetheprince.main import Position
+from savetheprince.position import Position
 
 
 class PositionFactory:
