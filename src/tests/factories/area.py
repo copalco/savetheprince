@@ -1,4 +1,4 @@
-from savetheprince.main import Area
+from savetheprince.area import Area
 from tests.factories.area_id import AreaIdFactory
 from tests.factories.position import PositionFactory
 from tests.factories.size import SizeFactory
