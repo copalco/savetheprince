@@ -1,6 +1,7 @@
 import os
 
 import pygame
+from savetheprince.area import Area
 from savetheprince.map_hero import MapHero
 from savetheprince.maparea import MapArea
 from savetheprince.maparea import AreaId
@@ -51,6 +52,40 @@ def run() -> None:
         MapArea(AreaId('bridge-of-death'), Size(132, 102), Position(0, 338)),
         MapArea(AreaId('watchtower'), Size(132, 108), Position(0, 225)),
         MapArea(AreaId('road-to-village'), Size(132, 78), Position(0, 142)),
+    ]
+    game_areas = [
+        Area(AreaId('village')),
+        Area(AreaId('field-one')),
+        Area(AreaId('forest-one')),
+        Area(AreaId('forest-two')),
+        Area(AreaId('forest-three')),
+        Area(AreaId('forest-four')),
+        Area(AreaId('church')),
+        Area(AreaId('field-two')),
+        Area(AreaId('field-three')),
+        Area(AreaId('field-four')),
+        Area(AreaId('town')),
+        Area(AreaId('hut')),
+        Area(AreaId('snow-forest')),
+        Area(AreaId('mountain-hut')),
+        Area(AreaId('snow-mountain')),
+        Area(AreaId('barren-field-one')),
+        Area(AreaId('dark-fortress')),
+        Area(AreaId('barren-field-two')),
+        Area(AreaId('temple')),
+        Area(AreaId('savannah')),
+        Area(AreaId('jungle-outside')),
+        Area(AreaId('barren-hills')),
+        Area(AreaId('bridge')),
+        Area(AreaId('mountains-one')),
+        Area(AreaId('mountains-two')),
+        Area(AreaId('field-five')),
+        Area(AreaId('capital')),
+        Area(AreaId('road-one')),
+        Area(AreaId('road-two')),
+        Area(AreaId('bridge-of-death')),
+        Area(AreaId('watchtower')),
+        Area(AreaId('road-to-village')),
     ]
     circle = Circle(*areas)
     presenter = Presenter(*areas)
