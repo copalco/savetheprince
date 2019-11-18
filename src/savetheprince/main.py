@@ -1,6 +1,7 @@
 import os
 
 import pygame
+from savetheprince.map_hero import MapHero
 from savetheprince.maparea import MapArea
 from savetheprince.maparea import AreaId
 from savetheprince.circle import Circle
@@ -52,9 +53,11 @@ def run() -> None:
         MapArea(AreaId('road-to-village'), Size(132, 78), Position(0, 142)),
     ]
     circle = Circle(*areas)
-    presenter = Presenter(areas[0])
+    presenter = Presenter(*areas)
     display.blit(background, (0, 0))
-    hero_position = presenter.locate_hero().centered(Size(*hero.get_size()))
+    map_hero = MapHero(Size(*hero.get_size()))
+    hero_position = presenter.position_hero(map_hero, AreaId('village'))
+    current_area = areas[0]
     display.blit(hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
@@ -67,22 +70,16 @@ def run() -> None:
                     should_continue = False
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
-                    hero_location = presenter.locate_hero()
-                    presenter.store_hero_location(
-                        circle.next(hero_location),
-                    )
-                    hero_position = presenter.locate_hero().centered(
-                        Size(*hero.get_size())
+                    current_area = circle.next(current_area)
+                    hero_position = presenter.position_hero(
+                        map_hero, current_area.id,
                     )
                     display.blit(hero, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
-                    hero_location = presenter.locate_hero()
-                    presenter.store_hero_location(
-                        circle.previous(hero_location),
-                    )
-                    hero_position = presenter.locate_hero().centered(
-                        Size(*hero.get_size())
+                    current_area = circle.previous(current_area)
+                    hero_position = presenter.position_hero(
+                        map_hero, current_area.id,
                     )
                     display.blit(hero, hero_position)
             pygame.display.flip()
