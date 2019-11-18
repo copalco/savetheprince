@@ -1,6 +1,6 @@
 import random
 
-from savetheprince.main import Size
+from savetheprince.size import Size
 
 
 class SizeFactory:

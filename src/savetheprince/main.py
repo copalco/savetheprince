@@ -1,14 +1,8 @@
-from dataclasses import dataclass
 import os
 import typing
 
 import pygame
-
-
-@dataclass(frozen=True)
-class Size:
-    width: int
-    height: int
+from savetheprince.size import Size
 
 
 class Position(typing.NamedTuple):

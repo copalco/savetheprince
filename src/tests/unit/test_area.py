@@ -3,7 +3,7 @@ import unittest
 from savetheprince.main import Area
 from savetheprince.main import AreaId
 from savetheprince.main import Position
-from savetheprince.main import Size
+from savetheprince.size import Size
 
 
 class TestArea(unittest.TestCase):
