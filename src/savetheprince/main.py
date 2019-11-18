@@ -59,7 +59,7 @@ class Circle(object):
         raise UnknownArea()
 
 
-class Game:
+class Presenter:
 
     def __init__(self, current_area: Area) -> None:
         self._current_hero_location: Area = current_area
@@ -114,9 +114,9 @@ def run() -> None:
         Area(Size(132, 78), Position(0, 142)),
     ]
     circle = Circle(*areas)
-    game = Game(areas[0])
+    presenter = Presenter(areas[0])
     display.blit(background, (0, 0))
-    hero_position = game.locate_hero().centered(Size(*hero.get_size()))
+    hero_position = presenter.locate_hero().centered(Size(*hero.get_size()))
     display.blit(hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
@@ -129,17 +129,21 @@ def run() -> None:
                     should_continue = False
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
-                    hero_location = game.locate_hero()
-                    game.store_hero_location(circle.next(hero_location))
-                    hero_position = game.locate_hero().centered(
+                    hero_location = presenter.locate_hero()
+                    presenter.store_hero_location(
+                        circle.next(hero_location),
+                    )
+                    hero_position = presenter.locate_hero().centered(
                         Size(*hero.get_size())
                     )
                     display.blit(hero, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
-                    hero_location = game.locate_hero()
-                    game.store_hero_location(circle.previous(hero_location))
-                    hero_position = game.locate_hero().centered(
+                    hero_location = presenter.locate_hero()
+                    presenter.store_hero_location(
+                        circle.previous(hero_location),
+                    )
+                    hero_position = presenter.locate_hero().centered(
                         Size(*hero.get_size())
                     )
                     display.blit(hero, hero_position)
