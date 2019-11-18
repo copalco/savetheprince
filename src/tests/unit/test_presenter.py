@@ -1,6 +1,6 @@
 import unittest
 
-from savetheprince.main import Presenter
+from savetheprince.presenter import Presenter
 from tests.factories.area import AreaFactory
 
 

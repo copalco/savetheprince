@@ -5,19 +5,8 @@ from savetheprince.area import Area
 from savetheprince.area import AreaId
 from savetheprince.circle import Circle
 from savetheprince.position import Position
+from savetheprince.presenter import Presenter
 from savetheprince.size import Size
-
-
-class Presenter:
-
-    def __init__(self, current_area: Area) -> None:
-        self._current_hero_location: Area = current_area
-
-    def store_hero_location(self, area: Area) -> None:
-        self._current_hero_location = area
-
-    def locate_hero(self) -> Area:
-        return self._current_hero_location
 
 
 def run() -> None:
