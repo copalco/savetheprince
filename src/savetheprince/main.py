@@ -1,11 +1,9 @@
 import os
-import typing
 
 import pygame
+from savetheprince.area import AreaId
 from savetheprince.position import Position
 from savetheprince.size import Size
-
-AreaId = typing.NewType('AreaId', str)
 
 
 class Area:
