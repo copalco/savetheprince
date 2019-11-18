@@ -1,7 +1,7 @@
 import unittest
 
-from savetheprince.main import Circle
-from savetheprince.main import UnknownArea
+from savetheprince.circle import Circle
+from savetheprince.circle import UnknownArea
 from tests.factories.area import AreaFactory
 
 
