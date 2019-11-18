@@ -7,4 +7,6 @@ class AreaIdFactory:
 
     @staticmethod
     def create() -> AreaId:
-        return AreaId(random.choices('abcdefghijklmnopqrstuvwxyz', k=6))
+        return AreaId(
+            ''.join(random.choices('abcdefghijklmnopqrstuvwxyz', k=6))
+        )
