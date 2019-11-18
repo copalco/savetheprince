@@ -1,6 +1,6 @@
 import random
 
-from savetheprince.area import AreaId
+from savetheprince.maparea import AreaId
 
 
 class AreaIdFactory:

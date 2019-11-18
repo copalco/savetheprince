@@ -6,7 +6,7 @@ from savetheprince.size import Size
 AreaId = typing.NewType('AreaId', str)
 
 
-class Area:
+class MapArea:
 
     def __init__(self, id: AreaId, size: Size, position: Position):
         self.id = id

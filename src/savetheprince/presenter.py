@@ -1,13 +1,13 @@
-from savetheprince.area import Area
+from savetheprince.maparea import MapArea
 
 
 class Presenter:
 
-    def __init__(self, current_area: Area) -> None:
-        self._current_hero_location: Area = current_area
+    def __init__(self, current_area: MapArea) -> None:
+        self._current_hero_location: MapArea = current_area
 
-    def store_hero_location(self, area: Area) -> None:
+    def store_hero_location(self, area: MapArea) -> None:
         self._current_hero_location = area
 
-    def locate_hero(self) -> Area:
+    def locate_hero(self) -> MapArea:
         return self._current_hero_location
