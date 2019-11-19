@@ -19,6 +19,6 @@ class MapArea:
         half_other_width = size.half_width()
         half_other_height = size.half_height()
         return Position(
-            round(half_width - half_other_width) + self._position.x,
-            round(half_height - half_other_height) + self._position.y,
+            half_width - half_other_width + self._position.x,
+            half_height - half_other_height + self._position.y,
         )
