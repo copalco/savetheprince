@@ -2,15 +2,9 @@ import typing
 
 from savetheprince.position import Position
 from savetheprince.size import Size
+from savetheprince.vector import Vector
 
 AreaId = typing.NewType('AreaId', str)
-
-
-class Vector:
-
-    def __init__(self, width: int, height: int) -> None:
-        self.width = width
-        self.height = height
 
 
 class MapArea:
