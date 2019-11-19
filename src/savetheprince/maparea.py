@@ -19,7 +19,4 @@ class MapArea:
             self._size.half_width() - size.half_width(),
             self._size.half_height() - size.half_height(),
         )
-        return Position(
-            vector.width + self._position.x,
-            vector.height + self._position.y,
-        )
+        return self._position.moved_by(vector)
