@@ -5,3 +5,6 @@ from dataclasses import dataclass
 class Size:
     width: int
     height: int
+
+    def half_width(self) -> int:
+        return 25
