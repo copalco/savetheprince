@@ -1,3 +1,5 @@
+import math
+
 from dataclasses import dataclass
 
 
@@ -7,4 +9,4 @@ class Size:
     height: int
 
     def half_width(self) -> int:
-        return 25
+        return math.ceil(self.width / 2)
