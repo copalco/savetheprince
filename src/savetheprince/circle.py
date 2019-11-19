@@ -1,8 +1,4 @@
 from savetheprince.maparea import MapArea
-from savetheprince.maparea import MapArea
-from savetheprince.maparea import MapArea
-from savetheprince.maparea import MapArea
-from savetheprince.maparea import MapArea
 
 
 class UnknownArea(Exception):
