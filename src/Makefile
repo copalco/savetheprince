@@ -1,3 +1,5 @@
+ci-build: test type-check
+
 test:
 	python -m unittest discover tests
 
