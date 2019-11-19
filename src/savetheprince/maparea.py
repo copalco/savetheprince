@@ -14,9 +14,9 @@ class MapArea:
         self._position = position
 
     def centered(self, size: Size) -> Position:
-        half_width = self._size.width / 2.0
+        half_width = self._size.half_width()
         half_height = self._size.height / 2.0
-        half_other_width = size.width / 2.0
+        half_other_width = size.half_width()
         half_other_height = size.height / 2.0
         return Position(
             round(half_width - half_other_width) + self._position.x,
