@@ -1,3 +1,6 @@
+tcr:
+	./tcr.sh
+
 ci-build: test type-check
 
 test:
