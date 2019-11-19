@@ -23,7 +23,10 @@ class Presenter:
         return self._current_hero_location
 
     def position_hero(self, hero: MapHero, area_id: AreaId) -> Position:
+        return self._find_area(area_id).centered(hero.size)
+
+    def _find_area(self, id: AreaId) -> MapArea:
         for area in self._areas:
-            if area.id == area_id:
-                return area.centered(hero.size)
+            if area.id == id:
+                return area
         raise MapAreaNotFound()
