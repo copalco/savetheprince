@@ -6,6 +6,13 @@ from savetheprince.size import Size
 AreaId = typing.NewType('AreaId', str)
 
 
+class Vector:
+
+    def __init__(self, width: int, height: int) -> None:
+        self.width = width
+        self.height = height
+
+
 class MapArea:
 
     def __init__(self, id: AreaId, size: Size, position: Position):
@@ -20,7 +27,8 @@ class MapArea:
         half_other_height = size.half_height()
         vector_width = half_width - half_other_width
         vector_height = half_height - half_other_height
+        vector = Vector(vector_width, vector_height)
         return Position(
-            vector_width + self._position.x,
-            vector_height + self._position.y,
+            vector.width + self._position.x,
+            vector.height + self._position.y,
         )
