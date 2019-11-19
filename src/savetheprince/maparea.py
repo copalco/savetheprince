@@ -21,13 +21,9 @@ class MapArea:
         self._position = position
 
     def centered(self, size: Size) -> Position:
-        half_width = self._size.half_width()
-        half_height = self._size.half_height()
-        half_other_width = size.half_width()
-        half_other_height = size.half_height()
         vector = Vector(
-            half_width - half_other_width,
-            half_height - half_other_height,
+            self._size.half_width() - size.half_width(),
+            self._size.half_height() - size.half_height(),
         )
         return Position(
             vector.width + self._position.x,
