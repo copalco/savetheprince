@@ -9,7 +9,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'dataclasses==0.7',
-        'pygame==1.9.6',
+        'pygame==2.0.0.dev6',
     ],
     extras_require={
         'tests': ['mypy==0.740'],
