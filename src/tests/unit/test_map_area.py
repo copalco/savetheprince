@@ -6,7 +6,7 @@ from savetheprince.position import Position
 from savetheprince.size import Size
 
 
-class TestArea(unittest.TestCase):
+class TestMapArea(unittest.TestCase):
 
     def test_finds_position_of_an_item_in_the_center(self) -> None:
         area = MapArea(AreaId('test-area'), Size(100, 100), Position(0, 0))
