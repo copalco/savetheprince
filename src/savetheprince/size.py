@@ -9,7 +9,10 @@ class Size:
     height: int
 
     def half_width(self) -> int:
-        return math.ceil(self.width / 2)
+        return self._half_of(self.width)
 
     def half_height(self) -> int:
-        return math.ceil(self.height / 2)
+        return self._half_of(self.height)
+
+    def _half_of(self, value: int) -> int:
+        return math.ceil(value / 2)
