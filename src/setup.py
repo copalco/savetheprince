@@ -15,6 +15,7 @@ setup(
         'tests': [
             'mypy==0.740',
             'flake8==3.7.9',
+            'coverage==4.5.4',
         ],
     },
 )
