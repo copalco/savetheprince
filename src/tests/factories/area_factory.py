@@ -5,5 +5,5 @@ from tests.factories.area_id import AreaIdFactory
 class AreaFactory:
 
     @staticmethod
-    def create():
+    def create() -> Area:
         return Area(AreaIdFactory.create())
