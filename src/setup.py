@@ -12,6 +12,9 @@ setup(
         'pygame==2.0.0.dev6',
     ],
     extras_require={
-        'tests': ['mypy==0.740'],
+        'tests': [
+            'mypy==0.740',
+            'flake8==3.7.9',
+        ],
     },
 )

@@ -1,10 +1,13 @@
 tcr:
 	./tcr.sh
 
-ci-build: test type-check
+ci-build: test type-check style-check
 
 test:
 	python -m unittest discover tests
 
 type-check:
 	mypy savetheprince/ tests/
+
+style-check:
+	flake8 .
