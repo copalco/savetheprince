@@ -16,12 +16,6 @@ class Presenter:
     def __init__(self, *areas: MapArea) -> None:
         self._areas: typing.List[MapArea] = list(areas)
 
-    def store_hero_location(self, area: MapArea) -> None:
-        self._current_hero_location = area
-
-    def locate_hero(self) -> MapArea:
-        return self._current_hero_location
-
     def position_hero(self, hero: MapHero, area_id: AreaId) -> Position:
         return self._find_area(area_id).centered(hero.size)
 
