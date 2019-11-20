@@ -89,12 +89,12 @@ def run() -> None:
         Area(AreaId('road-to-village')),
     ]
     game = Game()
-    circle = Circle(*areas)
+    circle = Circle(*game_areas)
     presenter = Presenter(*areas)
     display.blit(background, (0, 0))
     map_hero = MapHero(Size(*hero.get_size()))
     hero_position = presenter.position_hero(map_hero, AreaId('village'))
-    current_area = areas[0]
+    current_area = game_areas[0]
     display.blit(hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True

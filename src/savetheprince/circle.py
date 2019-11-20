@@ -1,4 +1,4 @@
-from savetheprince.maparea import MapArea
+from savetheprince.area import Area
 
 
 class UnknownArea(Exception):
@@ -8,10 +8,10 @@ class UnknownArea(Exception):
 
 class Circle(object):
 
-    def __init__(self, *areas: MapArea) -> None:
+    def __init__(self, *areas: Area) -> None:
         self._areas = areas
 
-    def next(self, current_area: MapArea) -> MapArea:
+    def next(self, current_area: Area) -> Area:
         for index, area in enumerate(self._areas):
             if area == current_area:
                 try:
@@ -20,7 +20,7 @@ class Circle(object):
                     return self._areas[0]
         raise UnknownArea()
 
-    def previous(self, current_area: MapArea) -> MapArea:
+    def previous(self, current_area: Area) -> Area:
         for index, area in enumerate(self._areas):
             if area == current_area:
                 return self._areas[index - 1]
