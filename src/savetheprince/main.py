@@ -36,9 +36,13 @@ def run() -> None:
         MapArea(AreaId('snow-forest'), Size(116, 146), Position(1160, 288)),
         MapArea(AreaId('mountain-hut'), Size(116, 76), Position(1160, 438)),
         MapArea(AreaId('snow-mountain'), Size(116, 88), Position(1160, 520)),
-        MapArea(AreaId('barren-field-one'), Size(116, 50), Position(1160, 612)),
+        MapArea(AreaId(
+            'barren-field-one'), Size(116, 50), Position(1160, 612),
+        ),
         MapArea(AreaId('dark-fortress'), Size(106, 130), Position(1172, 666)),
-        MapArea(AreaId('barren-field-two'), Size(138, 130), Position(1028, 666)),
+        MapArea(
+            AreaId('barren-field-two'), Size(138, 130), Position(1028, 666),
+        ),
         MapArea(AreaId('temple'), Size(100, 130), Position(922, 666)),
         MapArea(AreaId('savannah'), Size(94, 130), Position(823, 666)),
         MapArea(AreaId('jungle-outside'), Size(126, 130), Position(692, 666)),
@@ -88,7 +92,7 @@ def run() -> None:
         Area(AreaId('watchtower')),
         Area(AreaId('road-to-village')),
     ]
-    game = Game()
+    Game()
     circle = Circle(*game_areas)
     presenter = Presenter(*areas)
     display.blit(background, (0, 0))

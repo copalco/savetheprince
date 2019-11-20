@@ -20,7 +20,8 @@ class TestPresenter(unittest.TestCase):
             Position(5, 10),
         )
 
-    def test_raises_map_area_not_found_if_no_area_with_a_given_id(self) -> None:
+    def test_raises_map_area_not_found_if_no_area_with_a_given_id(
+            self) -> None:
         presenter = Presenter()
         hero = MapHero(size=Size(10, 20))
         with self.assertRaises(MapAreaNotFound):

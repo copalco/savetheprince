@@ -15,4 +15,3 @@ class TestMapArea(unittest.TestCase):
     def test_finds_absolute_position(self) -> None:
         area = MapArea(AreaId('test-area'), Size(100, 100), Position(15, 100))
         self.assertEqual(area.centered(Size(10, 10)), Position(60, 145))
-
