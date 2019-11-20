@@ -5,14 +5,14 @@ from savetheprince.position import Position
 from savetheprince.presenter import MapAreaNotFound
 from savetheprince.presenter import Presenter
 from savetheprince.size import Size
-from tests.factories.area import AreaFactory
+from tests.factories.map_area import MapAreaFactory
 from tests.factories.area_id import AreaIdFactory
 
 
 class TestPresenter(unittest.TestCase):
 
     def test_returns_position_for_hero_image(self) -> None:
-        area = AreaFactory.create(Size(20, 40), Position(0, 0))
+        area = MapAreaFactory.create(Size(20, 40), Position(0, 0))
         hero = MapHero(size=Size(10, 20))
         presenter = Presenter(area)
         self.assertEqual(

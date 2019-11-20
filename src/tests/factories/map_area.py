@@ -6,7 +6,7 @@ from tests.factories.position import PositionFactory
 from tests.factories.size import SizeFactory
 
 
-class AreaFactory:
+class MapAreaFactory:
 
     @staticmethod
     def create(size: Size = None, position: Position = None) -> MapArea:
