@@ -92,8 +92,8 @@ def run() -> None:
         Area(AreaId('watchtower')),
         Area(AreaId('road-to-village')),
     ]
-    Game()
     circle = Circle(*game_areas)
+    Game(circle)
     presenter = Presenter(*areas)
     display.blit(background, (0, 0))
     map_hero = MapHero(Size(*hero.get_size()))
