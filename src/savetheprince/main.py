@@ -2,7 +2,6 @@ import os
 
 import pygame
 from savetheprince.area import Area
-from savetheprince.game import Game
 from savetheprince.map_hero import MapHero
 from savetheprince.maparea import MapArea
 from savetheprince.maparea import AreaId
@@ -93,7 +92,6 @@ def run() -> None:
         Area(AreaId('road-to-village')),
     ]
     circle = Circle(*game_areas)
-    Game(circle)
     presenter = Presenter(*areas)
     display.blit(background, (0, 0))
     map_hero = MapHero(Size(*hero.get_size()))
