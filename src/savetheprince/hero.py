@@ -1,3 +1,7 @@
+from savetheprince.maparea import AreaId
+
+
 class Hero:
 
-    pass
+    def __init__(self, location: AreaId) -> None:
+        self._location = location
