@@ -13,4 +13,4 @@ class TestGame(unittest.TestCase):
         hero = Hero(location=starting_area.id)
         area_to_the_left = AreaFactory.create()
         game = Game(Circle(starting_area, area_to_the_left), hero)
-        game.move_left()
+        game.move_playing_hero_left()

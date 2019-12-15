@@ -8,5 +8,5 @@ class Game:
         self._circle = circle
         self._hero = hero
 
-    def move_left(self) -> None:
+    def move_playing_hero_left(self) -> None:
         pass
