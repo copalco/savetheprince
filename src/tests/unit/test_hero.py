@@ -16,4 +16,4 @@ class TestHero(unittest.TestCase):
         destination_area_id = AreaIdFactory.create()
         hero = Hero(location=area_id)
         hero.move(destination=destination_area_id)
-        self.assertEqual(hero.location(), area_id)
+        self.assertEqual(hero.location(), destination_area_id)

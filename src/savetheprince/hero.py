@@ -10,4 +10,4 @@ class Hero:
         return self._location
 
     def move(self, destination: AreaId) -> None:
-        pass
+        self._location = destination
