@@ -8,3 +8,6 @@ class Hero:
 
     def location(self) -> AreaId:
         return self._location
+
+    def move(self, destination: AreaId) -> None:
+        pass
