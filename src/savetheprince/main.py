@@ -3,6 +3,7 @@ from typing import List
 
 import pygame
 from savetheprince.area import Area
+from savetheprince.game import Game
 from savetheprince.hero import Hero
 from savetheprince.map_hero import MapHero
 from savetheprince.maparea import MapArea
@@ -95,6 +96,7 @@ def run() -> None:
     ]
     hero = Hero(location=AreaId('village'))
     circle = Circle(*game_areas)
+    Game(circle, hero)
     presenter = Presenter(*areas)
     display.blit(background, (0, 0))
     map_hero = MapHero(Size(*map_hero.get_size()))
