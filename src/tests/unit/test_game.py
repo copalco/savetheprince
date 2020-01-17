@@ -14,3 +14,4 @@ class TestGame(unittest.TestCase):
         area_to_the_left = AreaFactory.create()
         game = Game(Circle(starting_area, area_to_the_left), hero)
         game.move_playing_hero_left()
+        self.assertEqual(hero.location(), area_to_the_left.id)
