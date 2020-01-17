@@ -96,12 +96,11 @@ def run() -> None:
     ]
     hero = Hero(location=AreaId('village'))
     circle = Circle(*game_areas)
-    Game(circle, hero)
+    game = Game(circle, hero)
     presenter = Presenter(*areas)
     display.blit(background, (0, 0))
     map_hero = MapHero(Size(*map_hero.get_size()))
     hero_position = presenter.position_hero(map_hero, hero.location())
-    current_area = game_areas[0]
     display.blit(map_hero, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
@@ -114,16 +113,14 @@ def run() -> None:
                     should_continue = False
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
-                    current_area = circle.next(current_area.id)
-                    hero.move(current_area.id)
+                    game.move_playing_hero_right()
                     hero_position = presenter.position_hero(
                         map_hero, hero.location(),
                     )
                     display.blit(map_hero, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
-                    current_area = circle.previous(current_area.id)
-                    hero.move(current_area.id)
+                    game.move_playing_hero_left()
                     hero_position = presenter.position_hero(
                         map_hero, hero.location(),
                     )
