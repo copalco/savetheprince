@@ -8,7 +8,7 @@ from tests.factories.area_factory import AreaFactory
 
 class TestGame(unittest.TestCase):
 
-    def test_changes_hero_position(self) -> None:
+    def test_moves_hero_to_the_left(self) -> None:
         starting_area = AreaFactory.create()
         hero = Hero(location=starting_area.id)
         area_to_the_left = AreaFactory.create()
