@@ -20,8 +20,6 @@ def run() -> None:
     background = pygame.image.load(os.path.join('data', 'map.png'))
     background = pygame.transform.scale(background, (1280, 800))
     background.convert()
-    map_hero = pygame.image.load(os.path.join('data', 'dwarf.png'))
-    map_hero.convert()
     areas = [
         MapArea(AreaId('village'), Size(161, 137), Position(0, 0)),
         MapArea(AreaId('field-one'), Size(67, 137), Position(167, 0)),
@@ -99,9 +97,11 @@ def run() -> None:
     game = Game(circle, hero)
     presenter = Presenter(*areas)
     display.blit(background, (0, 0))
-    map_hero = MapHero(Size(*map_hero.get_size()))
+    hero_image = pygame.image.load(os.path.join('data', 'dwarf.png'))
+    hero_image.convert()
+    map_hero = MapHero(Size(*hero_image.get_size()))
     hero_position = presenter.position_hero(map_hero, hero.location())
-    display.blit(map_hero, hero_position)
+    display.blit(hero_image, hero_position)
     pygame.display.set_caption('Save The Prince')
     should_continue = True
     while should_continue:
@@ -117,14 +117,14 @@ def run() -> None:
                     hero_position = presenter.position_hero(
                         map_hero, hero.location(),
                     )
-                    display.blit(map_hero, hero_position)
+                    display.blit(hero_image, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
                     game.move_playing_hero_left()
                     hero_position = presenter.position_hero(
                         map_hero, hero.location(),
                     )
-                    display.blit(map_hero, hero_position)
+                    display.blit(hero_image, hero_position)
             pygame.display.flip()
     pygame.quit()
 
