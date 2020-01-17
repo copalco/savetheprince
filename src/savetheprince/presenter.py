@@ -17,7 +17,7 @@ class Presenter:
         self._areas: typing.List[MapArea] = list(areas)
 
     def position_hero(self, hero: MapHero, area_id: AreaId) -> Position:
-        return self._find_area(area_id).centered(hero.size)
+        return self._find_area(area_id).centered(hero.size())
 
     def _find_area(self, id: AreaId) -> MapArea:
         for area in self._areas:
