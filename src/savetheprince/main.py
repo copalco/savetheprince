@@ -1,4 +1,5 @@
 import os
+from typing import List
 
 import pygame
 from savetheprince.area import Area
@@ -58,7 +59,7 @@ def run() -> None:
         MapArea(AreaId('watchtower'), Size(132, 108), Position(0, 225)),
         MapArea(AreaId('road-to-village'), Size(132, 78), Position(0, 142)),
     ]
-    game_areas = [
+    game_areas: List[Area] = [
         Area(AreaId('village')),
         Area(AreaId('field-one')),
         Area(AreaId('forest-one')),
