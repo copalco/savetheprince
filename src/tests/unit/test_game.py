@@ -22,3 +22,4 @@ class TestGame(unittest.TestCase):
         area_to_the_right = AreaFactory.create()
         game = Game(Circle(area_to_the_right, self.starting_area), self.hero)
         game.move_playing_hero_right()
+        self.assertEqual(self.hero.location(), area_to_the_right.id)
