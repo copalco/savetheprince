@@ -8,10 +8,12 @@ from tests.factories.area_factory import AreaFactory
 
 class TestGame(unittest.TestCase):
 
+    def setUp(self) -> None:
+        self.starting_area = AreaFactory.create()
+        self.hero = Hero(location=self.starting_area.id)
+
     def test_moves_hero_to_the_left(self) -> None:
-        starting_area = AreaFactory.create()
-        hero = Hero(location=starting_area.id)
         area_to_the_left = AreaFactory.create()
-        game = Game(Circle(starting_area, area_to_the_left), hero)
+        game = Game(Circle(self.starting_area, area_to_the_left), self.hero)
         game.move_playing_hero_left()
-        self.assertEqual(hero.location(), area_to_the_left.id)
+        self.assertEqual(self.hero.location(), area_to_the_left.id)
