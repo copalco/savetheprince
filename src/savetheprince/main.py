@@ -113,15 +113,17 @@ def run() -> None:
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
                     current_area = circle.next(current_area.id)
+                    hero.move(current_area.id)
                     hero_position = presenter.position_hero(
-                        map_hero, current_area.id,
+                        map_hero, hero.location(),
                     )
                     display.blit(map_hero, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
                     current_area = circle.previous(current_area.id)
+                    hero.move(current_area.id)
                     hero_position = presenter.position_hero(
-                        map_hero, current_area.id,
+                        map_hero, hero.location(),
                     )
                     display.blit(map_hero, hero_position)
             pygame.display.flip()
