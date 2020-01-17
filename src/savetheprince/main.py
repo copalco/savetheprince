@@ -109,14 +109,14 @@ def run() -> None:
                     should_continue = False
                 if event.key == pygame.K_RIGHT:
                     display.blit(background, (0, 0))
-                    current_area = circle.next(current_area)
+                    current_area = circle.next(current_area.id)
                     hero_position = presenter.position_hero(
                         map_hero, current_area.id,
                     )
                     display.blit(hero, hero_position)
                 if event.key == pygame.K_LEFT:
                     display.blit(background, (0, 0))
-                    current_area = circle.previous(current_area)
+                    current_area = circle.previous(current_area.id)
                     hero_position = presenter.position_hero(
                         map_hero, current_area.id,
                     )
