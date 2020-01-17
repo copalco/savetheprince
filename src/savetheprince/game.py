@@ -11,3 +11,6 @@ class Game:
     def move_playing_hero_left(self) -> None:
         area = self._circle.previous(self._hero.location())
         self._hero.move(area.id)
+
+    def move_playing_hero_right(self) -> None:
+        pass
