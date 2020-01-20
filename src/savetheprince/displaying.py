@@ -4,8 +4,8 @@ from savetheprince.size import Size
 
 @dataclass
 class ScaleRatio:
-    height_ratio: float
     width_ratio: float
+    height_ratio: float
 
 
 def calculate_scale_ratio(initial: Size, final: Size) -> ScaleRatio:
