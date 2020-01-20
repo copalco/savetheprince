@@ -9,4 +9,5 @@ class ScaleRatio:
 
 
 def calculate_scale_ratio(initial: Size, final: Size) -> ScaleRatio:
-    return ScaleRatio(0.5, 0.5)
+    width_ratio = final.width / initial.width
+    return ScaleRatio(width_ratio, 0.5)

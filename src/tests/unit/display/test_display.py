@@ -12,3 +12,9 @@ class TestDisplay(unittest.TestCase):
             calculate_scale_ratio(Size(20, 10), Size(10, 5)),
             ScaleRatio(0.5, 0.5)
         )
+
+    def test_calculates_other_scale_ratio(self) -> None:
+        self.assertEqual(
+            calculate_scale_ratio(Size(30, 10), Size(10, 5)),
+            ScaleRatio(0.3333333333333333, 0.5)
+        )
